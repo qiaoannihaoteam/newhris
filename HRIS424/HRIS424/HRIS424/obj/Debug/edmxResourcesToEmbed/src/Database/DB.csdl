@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Sample.Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="DB" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="App_Temp_Data" EntityType="Sample.Model.App_Temp_Data" />
+    <EntitySet Name="Cost_Per" EntityType="Sample.Model.Cost_Per" />
+  </EntityContainer>
+  <EntityType Name="App_Temp_Data">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Type="String" Name="RID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DATA" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CREATE_AT" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Cost_Per">
+    <Key>
+      <PropertyRef Name="Sect_RID" />
+      <PropertyRef Name="Emp_No" />
+      <PropertyRef Name="Effect_Date" />
+      <PropertyRef Name="Customer_id" />
+    </Key>
+    <Property Name="RID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sect_RID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emp_No" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Effect_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Customer_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cost_Ratio" Type="Decimal" Nullable="false" Precision="10" Scale="6" />
+  </EntityType>
+</Schema>

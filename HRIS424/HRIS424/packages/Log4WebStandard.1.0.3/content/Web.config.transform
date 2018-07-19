@@ -1,0 +1,71 @@
+<configuration>
+  <configSections>
+    <section name="nlog" type="NLog.Config.ConfigSectionHandler, NLog"/>
+  </configSections>
+  <system.web>
+    <httpHandlers>
+      <add verb="*"
+           path="*.log"
+           type="Log4WebStandard.LogHandler,Log4WebStandard"/>
+    </httpHandlers>
+  </system.web>
+  <system.webServer>
+    <handlers>
+      <add name="LogHandler" verb="*" path="*.log" type="Log4WebStandard.LogHandler,Log4WebStandard" />
+    </handlers>
+  </system.webServer>
+  <nlog>
+    <!-- debug <nlog throwExceptions="true" internalLogFile="d:\nlog.txt" internalLogLevel="Debug">-->
+    <variable name="dbConnection" value="" />
+    <variable name="sqlText" value="" />
+    <variable name="apiAction" value="" />
+    <variable name="url" value="" />
+    <variable name="elapsedSeconds" value="" />
+    <variable name="cookie" value="" />
+    <variable name="session" value="" />
+    <variable name="form" value="" />
+    <variable name="userName" value="" />
+    <variable name="startTime" value="" />
+    <variable name="endTime" value="" />
+    
+    <targets>
+      <target name="asyc" type="AsyncWrapper">
+        <target type="Database">
+          
+          <connectionString>${var:dbConnection}</connectionString>
+          <commandText>
+            INSERT INTO [dbo].[App_Web_Log] ([application], [logged], [level], [message], [username], [request_ip], [session], [cookie], [user_agent], [request_method], [url], [query_string], [query_form], [logger], [callsite], [exception], [stack_trace], [api_action], [sql_text], [elapsed_seconds], [start_time], [end_time])
+            VALUES(@application, @logged, @level, @message, @username, @request_ip, @session, @cookie, @user_agent, @request_method, @url, @query_string, @query_form, @logger, @callsite, @exception, @stack_trace, @api_action, @sql_text, @elapsed_seconds, @start_time, @end_time)
+          </commandText>
+          
+          <parameter name="@application" layout="${iis-site-name}" />
+          <parameter name="@logged" layout="${date}" />
+          <parameter name="@level" layout="${level}" />
+          <parameter name="@message" layout="${message}" />
+          <parameter name="@username" layout="${var:userName}" />
+          <parameter name="@request_ip" layout="${aspnet-Request-IP}" />
+          <parameter name="@session" layout="${var:session}" />
+          <parameter name="@cookie" layout="${var:cookie}" />
+          <parameter name="@user_agent" layout="${aspnet-Request-UserAgent}" />
+          <parameter name="@request_method" layout="${aspnet-Request-Method}" />
+          <parameter name="@url" layout="${var:url}" />
+          <parameter name="@query_string" layout="${aspnet-request-queryString}" />
+          <parameter name="@query_form" layout="${var:form}" />
+          <parameter name="@logger" layout="${logger}" />
+          <parameter name="@callsite" layout="${callsite}" />
+          <parameter name="@exception" layout="${exception:tostring}" />
+          <parameter name="@stack_trace" layout="${stacktrace}" />
+          <parameter name="@api_action" layout="${var:apiAction}" />
+          <parameter name="@sql_text" layout="${var:sqlText}" />
+          <parameter name="@elapsed_seconds" layout="${var:elapsedSeconds}" />
+          <parameter name="@start_time" layout="${var:startTime}" />
+          <parameter name="@end_time" layout="${var:endTime}" />
+        </target>
+      </target>
+    </targets>
+    <rules>
+      <logger name="*" writeTo="asyc" />
+    </rules>
+  </nlog>
+
+</configuration>

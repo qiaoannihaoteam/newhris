@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CrystalISDModelStoreContainer" CdmEntityContainer="DB">
+    <EntitySetMapping Name="App_Temp_Data">
+      <EntityTypeMapping TypeName="Sample.Model.App_Temp_Data">
+        <MappingFragment StoreEntitySet="App_Temp_Data">
+          <ScalarProperty Name="CREATE_AT" ColumnName="CREATE_AT" />
+          <ScalarProperty Name="DATA" ColumnName="DATA" />
+          <ScalarProperty Name="RID" ColumnName="RID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cost_Per">
+      <EntityTypeMapping TypeName="Sample.Model.Cost_Per">
+        <MappingFragment StoreEntitySet="Cost_Per">
+          <ScalarProperty Name="Cost_Ratio" ColumnName="Cost_Ratio" />
+          <ScalarProperty Name="Customer_id" ColumnName="Customer_id" />
+          <ScalarProperty Name="Effect_Date" ColumnName="Effect_Date" />
+          <ScalarProperty Name="Emp_No" ColumnName="Emp_No" />
+          <ScalarProperty Name="Sect_RID" ColumnName="Sect_RID" />
+          <ScalarProperty Name="RID" ColumnName="RID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

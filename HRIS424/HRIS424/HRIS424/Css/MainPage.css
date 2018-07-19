@@ -1,0 +1,190 @@
+﻿/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Purpose      : FRCS index style
+ Date         : 2016-12-27
+ Author       : Gavin
+ Note         :
+ -------------------------------------------------
+ 27 Dec 2016      Gavin        the first version
+
+ the latest update: 2016-12-27 15:39:38
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@import url("CommonStyle.css");
+
+body
+{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: auto;
+}
+
+#container
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    float: left;
+    width: 100%;
+    text-align: left;
+    min-width: 1200px;
+}
+
+/*  按钮  */
+.button-bar
+{
+    height: 27px;
+    width: 100%;
+}
+
+.button-bar .item
+{
+    float: left;
+    padding: 5px 5px 0 0;
+}
+
+.button-bar .item button
+{
+    width: 130px;
+    height: 25px;
+    line-height: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.button-bar .k-icon
+{
+    margin: -2px 3px 0 -13px;
+}
+
+/*  搜索栏 */
+#search
+{
+    margin-left: 5px;
+    width: 100%;
+}
+
+#search-container .button-bar
+{
+    padding-bottom: 7px;
+}
+
+#title-spread, #title-shrink
+{
+    margin: 6px 0 0 4px;
+}
+
+#search-content .item
+{
+    float: left;
+    width: 32.5%;
+    background-color: #E9F2F7;
+    border-top: 1px solid #fffef9;
+    border-left: 1px solid #fffef9;
+}
+
+#search-content .item .label
+{
+    float: left;
+    width: 150px;
+    font-weight: bold;
+    background-color: #CADEE8;
+    height: 32px;
+    padding-left: 5px;
+    line-height: 30px;
+}
+
+/*  Grid    */
+#grid
+{
+    width: 99%;
+    margin-left: 5px;
+}
+
+#grid tbody
+{
+    text-align: center;
+}
+
+#grid .k-icon
+{
+    margin-top: 4px;
+}
+
+/*  kendo   */
+.k-header, .k-textbox
+{
+    margin: 2px 0 0 3px;
+}
+
+.k-grid-header th.k-header, .k-filter-row th
+{
+    font-weight: bolder;
+    text-align: center;
+}
+
+/* 遮罩层 */
+.k-loading-mask
+{
+    position: fixed;
+    display: none;
+}
+
+/* 只读 */
+.k-readonly
+{
+    color: rgb(168, 168, 168);
+}
+
+/* 设置文本框的宽度 */
+.k-multiselect, .k-autocomplete, .k-combobox, .k-dropdown, .k-textbox
+{
+    width: 220px;
+}
+
+/* 数字输入框 */
+.k-numerictextbox .k-input
+{
+    width: 98%;
+    text-align: right;
+    padding-right: 5px !important;
+}
+
+/* 其他 */
+.panel
+{
+    width: 99%;
+}
+
+li
+{
+    text-align: left;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.unSelect
+{
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.disableColor
+{
+    background-color: rgb(219, 219, 222);
+    color: rgb(81, 89, 103);
+}
+
+[required-mark]:after
+{
+    content: "*";
+    color: Red;
+}

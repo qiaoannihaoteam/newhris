@@ -1,0 +1,126 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Purpose      : FRCS edit page's style
+ Date         : 2016-12-27
+ Author       : Gavin
+ Note         :
+ -------------------------------------------------
+ 27 Dec 2016      Gavin        the first version
+
+ the latest update: 2016-12-27 15:39:38
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@import url("CommonStyle.css");
+.panelBar
+{
+    height: 27px;
+}
+
+/* container-fluid */
+
+.container-fluid
+{
+    background-color: #E9F2F7;
+    padding-left: 0;
+    margin-top: 1px;
+}
+
+.container-fluid .k-textbox
+{
+    width: 100%;
+}
+
+.form-horizontal .control-label
+{
+    text-align: left;
+}
+
+.form-group .k-widget
+{
+    width: 100%;
+    height: 30px;
+}
+
+.form-group .label
+{
+    text-align: left;
+    color: #000;
+    border-radius: 0;
+    background-color: #CADEE8;
+    height: 34px;
+}
+
+.input-block
+{
+    margin: 2px 0 2px 0;
+}
+
+.form-horizontal .form-group
+{
+    margin-top: -1px;
+    margin-bottom: 0;
+    border: 1px solid #fff;
+}
+
+/* Grid */
+
+#grid tr
+{
+    height: 40px;
+}
+
+.k-grid-header th.k-header
+{
+    line-height: 28px;
+    text-align: center;
+}
+
+/* 数字输入框 */
+
+.k-numerictextbox .k-input
+{
+    width: 98%;
+    text-align: right;
+    padding-right: 5px !important;
+}
+
+/* Column的下拉列表 */
+li .listrow
+{
+    display: table-row;
+    text-align: left;
+}
+
+.listrow .col
+{
+    text-align: left;
+    display: table-cell;
+    padding: 0 5px;
+}
+
+a
+{
+    color: #000;
+}
+
+/* tooltips */
+#grid .k-tooltip
+{
+    position: fixed;
+}
+
+span.k-tooltip
+{
+    position: absolute;
+    display: block;
+}
+
+.form-group .k-tooltip
+{
+    height: auto;
+    width: auto;
+}
+
+.k-numerictextbox .k-icon
+{
+    height: 17px;
+}

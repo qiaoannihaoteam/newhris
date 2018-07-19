@@ -1,0 +1,105 @@
+/* 控件主样式文件 */ 
+.SelectTree_dvMain,.SelectTree_dvMain input{margin:0;padding:0;vertical-align:middle;font-size:12px;font-family:"Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft YaHei",Arial;}
+.SelectTree_dvMain{width:100%;display: inline-block;}
+.SelectTree_dvMain ul,.SelectTree_dvMain li,.SelectTree_dvMain span{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align: baseline;}
+.SelectTree_dvMain ul{display: block;list-style-type: disc;}
+.SelectTree_dvMain ul.chosen-choices{position: relative;
+      overflow: hidden;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: auto !important;
+      height: 1%;
+      /*border: 1px solid #aaa;
+      background-color: #fff;
+      background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
+      background-image: -webkit-linear-gradient(#eeeeee 1%, #ffffff 15%);
+      background-image: -moz-linear-gradient(#eeeeee 1%, #ffffff 15%);
+      background-image: -o-linear-gradient(#eeeeee 1%, #ffffff 15%);
+      background-image: linear-gradient(#eeeeee 1%, #ffffff 15%);*/
+      cursor: text;
+  }
+
+.SelectTree_dvMain li{float:left;list-style:none;display: list-item;text-align: -webkit-match-parent;}
+.SelectTree_dvMain li.search-choice {
+  position: relative;
+  margin: 3px 0 3px 5px;
+  padding: 3px 20px 3px 5px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background-color: #e4e4e4;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-clip: padding-box;
+  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  color: #333;
+  line-height: 13px;
+  cursor: default;
+}
+.SelectTree_dvMain li.search-choice a{cursor: pointer;color: #F36C00;outline: none;text-decoration: none;}
+.SelectTree_dvMain li.search-choice .search-choice-close {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: url('../img/chosen-sprite.png') -42px 1px no-repeat;
+  font-size: 1px;
+}
+.SelectTree_dvMain li.search-choice .search-choice-close:hover {
+  background-position: -42px -10px;
+}
+
+.SelectTree_dvMain li.search-field{margin:0;padding:0;white-space: nowrap;}
+.SelectTree_dvMain li.search-field input[type="text"] {margin: 1px 0;
+  padding: 5px;
+  height: 15px;
+  outline: 0;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none;
+  font-size: 100%;
+  font-family: sans-serif;
+  line-height: normal;
+  border-radius: 0;
+}
+.SelectTree_Search{/*width:278px;width:25px;*/border:none;margin:0;padding:0;color:#000;}
+.SelectTree_Search_Def{color:#999;}
+.SelectTree_Search input[disabled],.SelectTree_Search input:disabled{background-color:#eee;cursor:text;}
+
+
+.SelectTree_dvDef{border:1px solid #a2bac0;background-color:#fff;}
+.SelectTree_dvHig{border:1px solid #f00;background-color:#FFB6C1;}
+.SelectTree_dvHig input{background-color:#FFB6C1;}
+.SelectTree_dvDis{border:1px solid #a2bac0;background-color:#F6F6F6;}
+.SelectTree_dvDis input{background-color:#d0d0d0;color:#666;}
+.SelectTree_dvDis .SelectTree_Select{background:url("../img/btn_select_dis.png") no-repeat;cursor:not-allowed;}
+
+
+/*
+.SelectTree_Search{width:100px;background-color:#fff;padding:3px;}
+.SelectTree_Search_Def{border:1px solid #a2bac0;background:#fff url("../img/txt_search_def.jpg") 3px 3px no-repeat;}
+.SelectTree_Search_Foc{border:1px solid #f79646;}
+.SelectTree_Search_Val{border:1px solid #a2bac0;}
+*/
+
+.SelectTree_Select{width:16px;height:16px;border:none;background:url("../img/btn_select_def.png") no-repeat;cursor:pointer; }
+
+
+.menuContent{background-color:#f0f6e4;}
+.menuSearch{background-color:#f0f6e4;}
+.ztree{border:1px solid #a2bac0;background:#f0f6e4;overflow-y:auto;overflow-x:auto;}
+.ztree li span.button.usergroup_ico_open, .ztree li span.button.usergroup_ico_close{margin-right:2px; background: url(zTree/img/diy/group.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.user_ico_docu{margin-right:2px; background: url(zTree/img/diy/user.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle;}
+.ztree li span.button.detail_ico_docu{margin-right:2px; background: url(zTree/img/diy/detail.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle;}
+
+.TreeSearchText{margin:0;padding:0;border:1px solid #a2bac0;background:#f0f6e4;overflow:hidden;}
+.TreeSearchText li{padding:5px;list-style:none;font-size:14px;font-family:"Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft YaHei",Arial;}
+.TreeSearchText li span{color:#f00;font-weight:bold;}

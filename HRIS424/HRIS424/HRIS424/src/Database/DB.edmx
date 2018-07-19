@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CrystalISD.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="App_Temp_Data">
+          <Key>
+            <PropertyRef Name="RID" />
+          </Key>
+          <Property Name="RID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DATA" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CREATE_AT" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cost_Per">
+          <Key>
+            <PropertyRef Name="Sect_RID" />
+            <PropertyRef Name="Emp_No" />
+            <PropertyRef Name="Effect_Date" />
+            <PropertyRef Name="Customer_id" />
+          </Key>
+          <Property Name="RID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sect_RID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Emp_No" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Effect_Date" Type="datetime" Nullable="false" />
+          <Property Name="Customer_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cost_Ratio" Type="decimal" Precision="10" Scale="6" Nullable="false" />
+        </EntityType>
+        <Function Name="SP_ItemLanguage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ItemID" Type="nvarchar" Mode="In" />
+          <Parameter Name="Description1" Type="nvarchar" Mode="In" />
+          <Parameter Name="Description2" Type="nvarchar" Mode="In" />
+          <Parameter Name="Description3" Type="nvarchar" Mode="In" />
+          <Parameter Name="Description4" Type="nvarchar" Mode="In" />
+          <Parameter Name="Description5" Type="nvarchar" Mode="In" />
+          <Parameter Name="actionID" Type="varchar" Mode="In" />
+          <Parameter Name="actionType" Type="tinyint" Mode="In" />
+        </Function>
+        <EntityContainer Name="CrystalISDModelStoreContainer">
+          <EntitySet Name="App_Temp_Data" EntityType="Self.App_Temp_Data" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cost_Per" EntityType="Self.Cost_Per" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Sample.Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="DB" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="App_Temp_Data" EntityType="Sample.Model.App_Temp_Data" />
+          <EntitySet Name="Cost_Per" EntityType="Sample.Model.Cost_Per" />
+        </EntityContainer>
+        <EntityType Name="App_Temp_Data">
+          <Key>
+            <PropertyRef Name="RID" />
+          </Key>
+          <Property Type="String" Name="RID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DATA" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CREATE_AT" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Cost_Per">
+          <Key>
+            <PropertyRef Name="Sect_RID" />
+            <PropertyRef Name="Emp_No" />
+            <PropertyRef Name="Effect_Date" />
+            <PropertyRef Name="Customer_id" />
+          </Key>
+          <Property Name="RID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sect_RID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_No" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Effect_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Customer_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cost_Ratio" Type="Decimal" Nullable="false" Precision="10" Scale="6" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CrystalISDModelStoreContainer" CdmEntityContainer="DB">
+          <EntitySetMapping Name="App_Temp_Data">
+            <EntityTypeMapping TypeName="Sample.Model.App_Temp_Data">
+              <MappingFragment StoreEntitySet="App_Temp_Data">
+                <ScalarProperty Name="CREATE_AT" ColumnName="CREATE_AT" />
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="RID" ColumnName="RID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cost_Per">
+            <EntityTypeMapping TypeName="Sample.Model.Cost_Per">
+              <MappingFragment StoreEntitySet="Cost_Per">
+                <ScalarProperty Name="Cost_Ratio" ColumnName="Cost_Ratio" />
+                <ScalarProperty Name="Customer_id" ColumnName="Customer_id" />
+                <ScalarProperty Name="Effect_Date" ColumnName="Effect_Date" />
+                <ScalarProperty Name="Emp_No" ColumnName="Emp_No" />
+                <ScalarProperty Name="Sect_RID" ColumnName="Sect_RID" />
+                <ScalarProperty Name="RID" ColumnName="RID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="True" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <edmx:DesignerProperty Name="ProcessDependentTemplatesOnSave" Value="True" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <edmx:Diagram Name="DB" ZoomLevel="100">
+        <edmx:EntityTypeShape EntityType="Sample.Model.App_Temp_Data" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5956835937499996" />
+        <edmx:EntityTypeShape EntityType="Sample.Model.Cost_Per" Width="1.5" PointX="3.375" PointY="0.75" />
+      </edmx:Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

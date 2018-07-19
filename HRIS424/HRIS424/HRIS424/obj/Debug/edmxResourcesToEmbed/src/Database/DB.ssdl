@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CrystalISD.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="App_Temp_Data">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DATA" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CREATE_AT" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cost_Per">
+    <Key>
+      <PropertyRef Name="Sect_RID" />
+      <PropertyRef Name="Emp_No" />
+      <PropertyRef Name="Effect_Date" />
+      <PropertyRef Name="Customer_id" />
+    </Key>
+    <Property Name="RID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sect_RID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Emp_No" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="Effect_Date" Type="datetime" Nullable="false" />
+    <Property Name="Customer_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cost_Ratio" Type="decimal" Precision="10" Scale="6" Nullable="false" />
+  </EntityType>
+  <Function Name="SP_ItemLanguage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ItemID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description1" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description2" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description3" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description4" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description5" Type="nvarchar" Mode="In" />
+    <Parameter Name="actionID" Type="varchar" Mode="In" />
+    <Parameter Name="actionType" Type="tinyint" Mode="In" />
+  </Function>
+  <EntityContainer Name="CrystalISDModelStoreContainer">
+    <EntitySet Name="App_Temp_Data" EntityType="Self.App_Temp_Data" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cost_Per" EntityType="Self.Cost_Per" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
